@@ -1,0 +1,22 @@
+{
+  "name": "read",
+  "version": "1.0.0",
+  "description": "Read a whole book you own (EPUB or PDF without DRM), a paper, a report or a web article, learn what it teaches, keep notes in a library that lasts, and turn it into a skill you can use from then on. Free, local, no API keys.",
+  "author": {
+    "name": "psabbagh",
+    "url": "https://github.com/psabbagh"
+  },
+  "homepage": "https://github.com/psabbagh/read-skill",
+  "repository": "https://github.com/psabbagh/read-skill",
+  "license": "MIT",
+  "keywords": [
+    "book",
+    "epub",
+    "pdf",
+    "article",
+    "paper",
+    "learning",
+    "notes",
+    "skills"
+  ]
+}

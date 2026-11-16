@@ -1,0 +1,41 @@
+{
+  "name": "read",
+  "version": "1.0.0",
+  "description": "Read a whole book you own (EPUB or PDF without DRM), a paper, a report or a web article, learn what it teaches, keep notes in a library that lasts, and turn it into a skill you can use from then on. Free, local, no API keys.",
+  "author": {
+    "name": "psabbagh",
+    "url": "https://github.com/psabbagh"
+  },
+  "homepage": "https://github.com/psabbagh/read-skill",
+  "repository": "https://github.com/psabbagh/read-skill",
+  "license": "MIT",
+  "keywords": [
+    "book",
+    "epub",
+    "pdf",
+    "article",
+    "paper",
+    "learning",
+    "notes",
+    "skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Read",
+    "shortDescription": "Learn a book or article and turn it into a skill",
+    "longDescription": "Give it a book you own (EPUB or PDF without DRM), a paper, a report or an article link. It reads the whole thing, chapter by chapter for long books, keeps notes in your own words in ~/learning-library, and writes a new skill from them that you read and approve before it is saved. Free, no API keys.",
+    "developerName": "psabbagh",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/psabbagh/read-skill",
+    "defaultPrompt": [
+      "Read this: <file or link>. Learn what it teaches and turn it into a skill I can use forever, for <what you want it for>.",
+      "Read this paper and turn it into a skill for reviewing my experiments.",
+      "What does my library say about hiring?"
+    ]
+  }
+}
