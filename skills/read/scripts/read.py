@@ -41,7 +41,8 @@ except Exception:
     pass
 
 CACHE = Path(os.environ.get("LEARNING_SKILLS_CACHE") or Path.home() / ".cache" / "learning-skills")
-PYPDF = "pypdf==7.1.0"
+# pypdf 7 needs Python 3.10; 6.21.4 is the last release that runs on 3.9 (the Python that comes with macOS).
+PYPDF = "pypdf==7.1.0" if sys.version_info >= (3, 10) else "pypdf==6.21.4"
 LOCKED_EXT = {".azw": "a Kindle book", ".azw3": "a Kindle book", ".kfx": "a Kindle book", ".mobi": "a Kindle book",
               ".aax": "an Audible book", ".aaxc": "an Audible book", ".acsm": "an Adobe library loan",
               ".lcpl": "a library loan"}
@@ -308,8 +309,9 @@ def epub_chapters(path: Path):
             ch["text"] += "\n\n## Notes To This Chapter\n\n" + "\n\n".join(lines)
     left = [k for k in notes if k not in used]
     if left and chapters:
-        chapters.append({"title": "Other notes", "text": "\n\n".join(
-            f"[{re.sub(r'^\D*', '', k.split('#')[-1]) or k}] {notes[k]}" for k in left)})
+        def tag(k):
+            return re.sub(r"^\D*", "", k.split("#")[-1]) or k
+        chapters.append({"title": "Other notes", "text": "\n\n".join(f"[{tag(k)}] {notes[k]}" for k in left)})
         note_words += sum(words(notes[k]) for k in left)
     # dc:date is usually this edition's date, not when the work was written, so it is kept apart.
     return {"title": title.strip(), "author": (author or "").strip(), "date": "", "edition_date": (date or "")[:10],

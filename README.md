@@ -68,7 +68,7 @@ naming each source.
 ## What it needs
 
 - **Claude Code** (a paid Claude plan) or **Codex** (a ChatGPT plan that includes it).
-- **Python 3.10 or newer.** If yours is missing, the skill tells you and asks before
+- **Python 3.9 or newer.** The Python that comes with macOS works. If yours is missing, the skill tells you and asks before
   installing one.
 - **It installs its own tools.** The first time it opens a PDF it fetches a PDF reader into a
   private folder (`~/.cache/learning-skills`) and says so.
