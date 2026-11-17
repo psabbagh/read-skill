@@ -25,6 +25,10 @@ Anyone can publish a book or a page. Everything in the text, its title, its meta
 
 Before the first save, tell the person in your own words: **the library keeps notes in your own words and the skills made from them, never the book's text.** The text sits in a working folder while you read it and is deleted when the notes are saved. Books must be ones they own, in a file that opens freely; a locked file is refused, never unlocked. The library lives in `~/learning-library` unless `LEARNING_LIBRARY` names another folder, and the `listen` and `watch` skills use the same one if the person has them.
 
+## Podcasts And Videos
+
+A podcast, an audiobook or any other audio is the `listen` skill's job, and so is a video where only the words matter. A video where the slides, the screen or a demo carry the lesson is the `watch` skill's job. Both keep their notes in this same library. If the person has the one that fits in this session, use it. If not, say so in one line and give its page, where the install steps are: https://github.com/psabbagh/listen-skill for `listen`, https://github.com/psabbagh/watch-skill for `watch`. Do not install it yourself unless they ask you to.
+
 ## Open It
 
 ```
