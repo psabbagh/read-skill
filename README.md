@@ -6,6 +6,9 @@ turns them into a new skill you can use from then on.
 
 Free. No API keys. Nothing to sign up for. Works in **Claude Code** and **Codex**.
 
+**One of three.** Claude can also listen to podcasts with [listen-skill](https://github.com/psabbagh/listen-skill) and watch
+videos with [watch-skill](https://github.com/psabbagh/watch-skill). Install any of them: they all keep their notes in the same library.
+
 ## 1. Install it
 
 **Claude Code.** Open your computer's terminal and run these two commands, one at a time:
@@ -44,12 +47,38 @@ Read this: [file or link]. Learn what it teaches and turn it into a skill I can 
 For example: *Read this: ~/Downloads/the-book.epub. Learn what it teaches and turn it into a
 skill I can use forever, for pricing my services.*
 
-It takes an EPUB or PDF without DRM, a Word, text or Markdown file, a saved web page, a link
-to an article, or a link to a PDF or arXiv paper. In the Claude desktop app you can drag the
-file into the chat instead of typing its path.
+In the Claude desktop app you can drag the file into the chat instead of typing its path.
 
 You do not have to type a command; asking is enough. If you prefer a command, type `/read`
 in Claude Code and pick **read:read**, or type `$` in Codex and pick **read**.
+
+## What it can read
+
+| Give it | What it does |
+|---|---|
+| **An EPUB book without DRM** (from Standard Ebooks, Project Gutenberg, or an author or store that sells DRM-free) | The whole book, split into chapters from its own table of contents |
+| **A PDF with real text in it**: a book, a report, a white paper, a research paper | The whole thing; a long one is split into chapters |
+| **A link to a web article**: a blog post, a newsletter issue, a news story | The article's text |
+| **A link to a PDF or EPUB file** | Downloads it and reads it as above |
+| **An arXiv paper link** (the abstract page or the PDF) | The paper, with its title, authors and date |
+| **A Word document (.docx)** | The document |
+| **A text, Markdown or saved web page file** (.txt, .md, .html) | The file |
+
+Footnotes and endnotes are kept with the chapter that points to them. For a book over about
+50,000 words it tells you the size first and offers to read only the chapters that matter
+for your goal.
+
+**What it cannot read:**
+
+- **Kindle books** (.azw, .azw3, .kfx, .mobi), **Audible**, **library loans** and other
+  **DRM-locked** EPUBs or PDFs. Refused, never unlocked.
+- **Scanned PDFs** (pictures of pages, no text). Run text recognition first: Preview on a Mac,
+  Acrobat, or Google Drive can do it.
+- **Old Word files** (.doc). Save as .docx first.
+- **Articles behind a sign-in or paywall**, or pages that only load with JavaScript. Open the
+  article yourself, copy the text and paste it into the chat; it carries on from there.
+- **Audiobooks and podcasts.** Those go to
+  [listen-skill](https://github.com/psabbagh/listen-skill).
 
 ## What happens
 
@@ -76,11 +105,8 @@ naming each source.
 
 ## What it does not do
 
-- **No locked books.** Kindle and Audible files, library loans and other DRM-protected EPUBs
-  and PDFs are refused, never unlocked. It tells you what you can do instead, such as buying a
+- **No unlocking.** For a locked book it tells you what you can do instead, such as buying a
   DRM-free edition, or dictating your own notes for it to file.
-- **No scanned pages.** A scan has pictures of pages and no text. Run text recognition first
-  (Preview on a Mac, Acrobat or Google Drive can do it).
 - **No book text kept.** The library keeps notes in its own words and the skills made from
   them, never the book's text. The text sits in a working folder while it reads and is deleted
   once the notes are saved.
